@@ -1,13 +1,12 @@
 import React from 'react'
 import Navbar from './header/Navbar'
-import Hero from './hero/Hero'
+import Hero from './home/hero/Hero'
 
 const Layout: React.FC = ({ children }) => {
   return (
     <div className="font-roboto">
       <Navbar />
-      <Hero />
-      <div className="px-5 py-3">{children}</div>
+      {children}
     </div>
   )
 }
