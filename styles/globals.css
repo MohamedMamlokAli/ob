@@ -17,6 +17,10 @@ section.main {
   );
   height: 400px;
 }
+.page {
+  padding-top: 6rem;
+  position: relative;
+}
 @media screen and (min-width: 768px) {
   section.main {
     height: 500px;
@@ -25,5 +29,8 @@ section.main {
 @media screen and (min-width: 1024px) {
   section.main {
     height: 700px;
+  }
+  .page {
+    padding-top: 9rem;
   }
 }
