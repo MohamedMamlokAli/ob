@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { Options } from '../../types'
 import { RootState } from '../store'
 interface Filter {
@@ -65,8 +65,17 @@ const initialState: State = {
 export const filterSlice = createSlice({
   name: 'filter',
   initialState,
-  reducers: {},
+  reducers: {
+    toggleBlogFilter: (state) => {
+      state.blog.filterOpen = !state.blog.filterOpen
+    },
+    toggleRecipeFilter: (state) => {
+      state.recipe.filterOpen = !state.recipe.filterOpen
+    },
+  },
 })
 
 export const selectBlogFilter = (state: RootState) => state.filter.blog
 export const selectRecipeFilter = (state: RootState) => state.filter.recipe
+
+export const { toggleBlogFilter } = filterSlice.actions
