@@ -1,4 +1,4 @@
 export interface Options {
-  title: string
-  filters: string[]
+  header: string
+  options: string[]
 }

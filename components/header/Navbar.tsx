@@ -17,7 +17,6 @@ const Navbar = () => {
       return () => window.removeEventListener('scroll', onScroll)
     }
   }, [])
-  console.log(router)
   return (
     <header
       className={`lg:px-15 fixed top-0 z-50 flex w-full items-center justify-between px-5 py-5 backdrop-blur-sm transition-colors lg:py-8 xl:px-20  xl:py-8 ${

@@ -10,8 +10,8 @@ const FilterContainer: React.FC<{ options: Options[] }> = ({ options }) => {
         {options.map((option, index) => {
           return (
             <div key={index}>
-              <Title title={option.title} />
-              <FilterOptions filters={option.filters} indexOfElements={index} />
+              <Title title={option.header} />
+              <FilterOptions filters={option.options} indexOfElements={index} />
             </div>
           )
         })}
