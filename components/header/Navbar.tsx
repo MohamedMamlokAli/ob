@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 import Logo from '../common/Logo'
 import { SearchIcon, UserIcon } from '@heroicons/react/outline'
 const Navbar = () => {
@@ -31,21 +32,21 @@ const Navbar = () => {
           <li
             className={`${router.pathname === '/' && 'border-b border-black'}`}
           >
-            Home
+            <Link href={'/'}>Home</Link>
           </li>
           <li
             className={`${
-              router.pathname === '/blogs' && 'border-b border-black'
+              router.pathname === '/blog' && 'border-b border-black'
             }`}
           >
-            Blog
+            <Link href={'/blog'}>Blog</Link>
           </li>
           <li
             className={`${
               router.pathname === '/recipes' && 'border-b border-black'
             }`}
           >
-            Recipes
+            <Link href={'/recipe'}>Recipes</Link>
           </li>
         </ul>
       </nav>

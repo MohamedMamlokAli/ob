@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Card from './Card'
 import CardsContainer from './CardsContainer'
 import FilterContainer from './filter/FilterContainer'
@@ -8,6 +8,7 @@ interface PageProps {
   options: Options[]
 }
 const PageContent: React.FC<PageProps> = ({ title, options }) => {
+  const [filterMenu, setfilterMenu] = useState(false)
   return (
     <div className="mt-5 w-full md:flex md:items-center">
       {/* Filter menu */}
