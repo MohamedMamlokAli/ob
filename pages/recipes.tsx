@@ -8,7 +8,7 @@ const recipes = () => {
     <div className="page lg:px-15 container mx-auto px-5 xl:px-20 ">
       <CurrentPage page="recipes" />
       <PageContent title="latest recipes" />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

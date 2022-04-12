@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="container mx-auto space-y-4 pt-8">
+    <footer className="container mx-auto mt-4 space-y-4 border-t border-gray-700 pt-8">
       <div className="flex flex-col items-center gap-4 md:flex-row md:justify-between md:px-3">
         <h1 className="font-moc text-4xl">Organic Bomb</h1>
         <ul className="space-y-4 text-center">
