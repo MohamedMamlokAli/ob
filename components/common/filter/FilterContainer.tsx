@@ -3,9 +3,16 @@ import { Options } from '../../../types'
 import FilterOptions from './FilterOptions'
 import Title from './Title'
 
-const FilterContainer: React.FC<{ options: Options[] }> = ({ options }) => {
+const FilterContainer: React.FC<{
+  options: Options[]
+  filterState: boolean
+}> = ({ options, filterState }) => {
   return (
-    <div className="hidden w-1/3  md:block">
+    <div
+      className={`absolute w-1/3 scale-0 ${
+        filterState && 'w-screen scale-100 bg-white'
+      } origin-top transition-transform duration-300  md:relative md:block md:scale-100`}
+    >
       <div id="filters">
         {options.map((option, index) => {
           return (

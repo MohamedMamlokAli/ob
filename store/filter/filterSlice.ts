@@ -78,4 +78,4 @@ export const filterSlice = createSlice({
 export const selectBlogFilter = (state: RootState) => state.filter.blog
 export const selectRecipeFilter = (state: RootState) => state.filter.recipe
 
-export const { toggleBlogFilter } = filterSlice.actions
+export const { toggleBlogFilter, toggleRecipeFilter } = filterSlice.actions
