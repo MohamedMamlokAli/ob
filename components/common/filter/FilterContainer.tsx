@@ -8,11 +8,7 @@ const FilterContainer: React.FC<{
   filterState: boolean
 }> = ({ options, filterState }) => {
   return (
-    <div
-      className={`absolute w-1/3 scale-0 ${
-        filterState && 'w-screen scale-100 bg-white'
-      } origin-top transition-transform duration-300  md:relative md:block md:scale-100`}
-    >
+    <div className={`hidden md:block md:w-1/3`}>
       <div id="filters">
         {options.map((option, index) => {
           return (

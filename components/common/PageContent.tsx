@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { urlFor } from '../../lib/sanity'
+
 import Card from './Card'
 import CardsContainer from './CardsContainer'
 import FilterContainer from './filter/FilterContainer'
@@ -10,12 +12,14 @@ interface PageProps {
   options: Options[]
   filterState: boolean
   filterToggler: ActionCreatorWithoutPayload<string>
+  data: any
 }
 const PageContent: React.FC<PageProps> = ({
   title,
   options,
   filterState,
   filterToggler,
+  data,
 }) => {
   const dispatch = useDispatch()
   return (
@@ -33,12 +37,13 @@ const PageContent: React.FC<PageProps> = ({
           </button>
         </div>
         <CardsContainer>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {data.map((recipe: any, index: any) => (
+            <Card
+              title={recipe.recipeName}
+              image={urlFor(recipe.imageReference).url()}
+              key={index}
+            />
+          ))}
         </CardsContainer>
       </div>
     </div>

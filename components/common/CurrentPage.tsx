@@ -6,7 +6,10 @@ interface Current {
 const CurrentPage: React.FC<Current> = ({ page, article }) => {
   return (
     <h3 className="uppercase text-gray-700">
-      organic bomb / {page} {article && `/ ${article}`}
+      organic bomb / {page}{' '}
+      <span className=" font-medium text-black">
+        {article && `/ ${article}`}
+      </span>
     </h3>
   )
 }

@@ -6,15 +6,15 @@ import LatestRecipes from '../components/home/latestRecipes/Latest'
 import InnerLayout from '../components/InnerLayout'
 import { sanityClient } from '../lib/sanity-server.js'
 
-// export const getStaticProps = async () => {
-//   const query = '*[_type=="recipe"][0]{recipeName,imageReference,howToMake}'
-//   const data = await sanityClient.fetch(query)
-//   return {
-//     props: {
-//       data,
-//     },
-//   }
-// }
+export const getStaticProps = async () => {
+  const query = '*[_type=="recipe"][0]{recipeName,imageReference,howToMake}'
+  const data = await sanityClient.fetch(query)
+  return {
+    props: {
+      data,
+    },
+  }
+}
 const Home: NextPage = ({ data }: any) => {
   console.log(data)
   return (
