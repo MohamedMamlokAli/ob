@@ -11,7 +11,7 @@ import {
   toggleRecipeFilter,
 } from '../store/filter/filterSlice'
 import { urlFor } from '../lib/sanity.js'
-const allRecipesQuery = groq`*[_type=='recipe'][]{recipeName,imageReference,howToMake}`
+const allRecipesQuery = groq`*[_type=='recipe'][]{recipeName,imageReference,howToMake,slug}`
 export const getStaticProps = async () => {
   const data = await sanityClient.fetch(allRecipesQuery)
   return {
@@ -21,7 +21,7 @@ export const getStaticProps = async () => {
   }
 }
 const recipes = ({ data }: any) => {
-  console.log(data[0].recipeName, urlFor(data[0].imageReference).url())
+  console.log(data[0].slug.current, urlFor(data[0].imageReference).url())
   const recipeFilters = useSelector(selectRecipeFilter)
   return (
     <div className="page lg:px-15 container mx-auto px-5 xl:px-20 ">

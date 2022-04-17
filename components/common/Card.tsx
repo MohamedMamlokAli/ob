@@ -16,9 +16,9 @@ const Card: React.FC<CardProps> = ({ title, image }) => {
         <div className="flex justify-between text-gray-600">
           <time>5/4/2022</time> <div>367 views</div>
         </div>
-        <div className="my-1">
+        {/* <div className="my-1">
           <span className="my-2 rounded-full bg-gray-300 px-2">meat</span>
-        </div>
+        </div> */}
         <div className="flex h-2/5 flex-col justify-between">
           <h3 className="flex-1 text-lg font-medium">{title}</h3>
         </div>

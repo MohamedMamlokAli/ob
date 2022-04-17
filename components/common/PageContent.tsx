@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { urlFor } from '../../lib/sanity'
-
+import Link from 'next/link'
 import Card from './Card'
 import CardsContainer from './CardsContainer'
 import FilterContainer from './filter/FilterContainer'
@@ -22,6 +22,7 @@ const PageContent: React.FC<PageProps> = ({
   data,
 }) => {
   const dispatch = useDispatch()
+  // data.map((recipe) => console.log(recipe.slug))
   return (
     <div className=" mt-5 w-full md:flex md:items-center">
       {/* Filter menu */}
@@ -37,6 +38,16 @@ const PageContent: React.FC<PageProps> = ({
           </button>
         </div>
         <CardsContainer>
+          {data.map((recipe: any, index: any) => (
+            <Link href={`/blog/${recipe.slug.current}`} key={index}>
+              <a>
+                <Card
+                  title={recipe.recipeName}
+                  image={urlFor(recipe.imageReference).url()}
+                />
+              </a>
+            </Link>
+          ))}
           {data.map((recipe: any, index: any) => (
             <Card
               title={recipe.recipeName}
